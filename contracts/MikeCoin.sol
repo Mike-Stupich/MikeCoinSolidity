@@ -3,17 +3,22 @@ pragma solidity ^0.4.2;
 contract MikeCoin {
     mapping(address=>uint) public balances;
     address public minter; 
+    uint tokensCreated;
 
 
     event transfer(address from, address to, uint amount);
 
     function MikeCoin(){
+        tokensCreated = 0;
         minter = tx.origin;
     }
 
     function mint(uint amount, address receiver){
-        if (msg.sender == minter)
+        if (msg.sender == minter){
             balances[receiver] += amount;
+            tokensCreated +=amount;
+        }
+            
     }
 
     function transferFunds(uint amount, address receiver)returns (bool success){
