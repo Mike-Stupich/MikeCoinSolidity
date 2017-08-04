@@ -1,0 +1,119 @@
+{
+  "contract_name": "MikeCoin",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "minter",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "getBalance",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balances",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "mint",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "transferFunds",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "name": "from",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "to",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "transfer",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b60018054600160a060020a03191633600160a060020a03161790555b5b6102878061003c6000396000f300606060405263ffffffff60e060020a60003504166307546172811461005057806312065fe01461007f57806327e235e3146100a457806394bf804d146100d5578063f08e362f146100f9575b600080fd5b341561005b57600080fd5b61006361012f565b604051600160a060020a03909116815260200160405180910390f35b341561008a57600080fd5b61009261013e565b60405190815260200160405180910390f35b34156100af57600080fd5b610092600160a060020a036004351661015b565b60405190815260200160405180910390f35b34156100e057600080fd5b6100f7600435600160a060020a036024351661016d565b005b341561010457600080fd5b61011b600435600160a060020a03602435166101a8565b604051901515815260200160405180910390f35b600154600160a060020a031681565b600160a060020a0333166000908152602081905260409020545b90565b60006020819052908152604090205481565b60015433600160a060020a03908116911614156101a357600160a060020a03811660009081526020819052604090208054830190555b5b5050565b600160a060020a033316600090815260208190526040812054839010156101d157506000610255565b600160a060020a03338181166000908152602081905260408082208054889003905592851681528290208054860190557fbeabacc8ffedac16e9a60acdb2ca743d80c2ebb44977a93fa8e483c74d2b35a8918490869051600160a060020a039384168152919092166020820152604080820192909252606001905180910390a15060015b929150505600a165627a7a723058205907fdc1fd0fa6a681ed45b59d382e966cf1b889bc727652bde42f33b39b74b00029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1501797722199
+}
