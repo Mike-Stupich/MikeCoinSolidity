@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
+//import SimpleStorageContract from '../build/contracts/SimpleStorage.json'
 import MikeCoinContract from '../build/contracts/MikeCoin.json'
 import getWeb3 from './utils/getWeb3'
 
@@ -68,19 +68,19 @@ class App extends Component {
     const contract = require('truffle-contract');
     const MikeCoin = contract(MikeCoinContract);
     MikeCoin.setProvider(this.state.web3.currentProvider);
-
     var MikeCoinInstance;
 
     this.state.web3.eth.getAccounts((error, accounts) => {
-      MikeCoin.deployed({from:accounts[0]}).then(function (instance) {
+      MikeCoin.deployed()
+      .then((instance) => {
         MikeCoinInstance = instance;
-
-        return MikeCoinInstance.mint(10, accounts[0], { from:accounts[0] });
-      }).then(function(){
-        return MikeCoinInstance.getBalance.call({ from:accounts[0] })
-      }).then(function(balance){
-        console.log(balance);
-        return this.setState({myBalance: balance.toNumber() })
+        return MikeCoinInstance.mint(10, accounts[1], { from:accounts[0] });
+      })
+      .then(() => {
+        return MikeCoinInstance.getBalance.call({ from:accounts[1] })
+      })
+      .then((balance)=> {
+        return this.setState({ myBalance: balance.toNumber() })
       })
     })
   }

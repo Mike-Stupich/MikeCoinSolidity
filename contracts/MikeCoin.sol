@@ -8,7 +8,7 @@ contract MikeCoin {
     event transfer(address from, address to, uint amount);
 
     function MikeCoin(){
-        minter = msg.sender;
+        minter = tx.origin;
     }
 
     function mint(uint amount, address receiver){
